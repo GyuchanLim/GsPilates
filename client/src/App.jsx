@@ -7,10 +7,12 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <h1>React on Rails Blog</h1>
+        <h1>Pilates website</h1>
         <p>Find this application layout in client/src/App.jsx</p>
+        {/* This is where you have banner e.g. <Banner />*/}
         <NavBar />
         <AppRoutes />
+        {/* This is where you have footer e.g. <Footer />*/}
       </div>
     </Router>
   )

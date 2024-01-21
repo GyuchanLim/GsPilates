@@ -1,15 +1,20 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import PostsList from "./PostsList";
-import PostDetails from "./PostDetails";
+import HomePage from "./HomePage";
+import PricesPage from "./PricesPage";
+import AboutPage from "./AboutPage";
+import ContactsPage from "./ContactsPage";
+import SchedulePage from "./SchedulePage";
 
 function AppRoutes() {
   return(
     <Routes>
-      <Route path="/" element={<PostsList />} />
-      <Route path="/posts/:id" element={<PostDetails />} />
-      <Route path="/new" element={<h1>New Post Form</h1>} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/prices" element={<PricesPage />} />
+      <Route path="/schedule" element={<SchedulePage />} />
+      <Route path="/contact" element={<ContactsPage />} />
     </Routes>
   )
 }
