@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+.show-border {
+  border-width: 2px;
+  border-style: dotted;
+  border-color: black;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

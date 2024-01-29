@@ -1,0 +1,7 @@
+.homebody-container {
+  display: flex;
+}
+
+.homebody-container__image{
+  height: 200px;
+}

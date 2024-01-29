@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function NavBar () {
   return (
     <nav>
-      <Link to="/about">About</Link>
+      <Link to="/">Home</Link>
       {" | "}
       <Link to="/prices">Prices</Link>
       {" | "}
@@ -16,5 +16,3 @@ function NavBar () {
 }
 
 export default NavBar;
-
-// Post List Link (Root path) | Link to Create New Post (Post Form)

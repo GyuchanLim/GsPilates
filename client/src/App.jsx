@@ -1,7 +1,8 @@
-import { BrowserRouter as Router } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 import AppRoutes from "./components/AppRoutes";
-import NavBar from "./components/NavBar"
+import NavBar from "./components/NavBar";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         {/* This is where you have banner e.g. <Banner />*/}
         <NavBar />
         <AppRoutes />
-        {/* This is where you have footer e.g. <Footer />*/}
+        <Footer />
       </div>
     </Router>
   )
