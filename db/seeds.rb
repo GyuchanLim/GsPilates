@@ -8,12 +8,5 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Post.destroy_all
-
-# Create 2 posts
-2.times do
-  Post.create(
-    title: Faker::Lorem.sentence(word_count: 3),
-    body: Faker::Lorem.paragraph(sentence_count: 3)
-  )
-end
+load('db/post_seeds.rb')
+load('db/user_seeds.rb')
