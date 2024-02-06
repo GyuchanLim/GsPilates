@@ -15,18 +15,46 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_053008) do
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.string "customer"
-    t.datetime "day"
+    t.bigint "session_id"
+    t.datetime "date"
+    t.string "day"
     t.string "from"
     t.string "to"
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["session_id"], name: "index_appointments_on_session_id"
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.bigint "session_id"
+    t.string "name"
+    t.string "email"
+    t.string "phone_number"
+    t.text "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["session_id"], name: "index_clients_on_session_id"
+  end
+
+  create_table "movements", force: :cascade do |t|
+    t.bigint "session_id"
+    t.string "movement_name"
+    t.text "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["session_id"], name: "index_movements_on_session_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

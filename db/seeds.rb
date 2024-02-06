@@ -17,3 +17,45 @@ Post.destroy_all
     body: Faker::Lorem.paragraph(sentence_count: 3)
   )
 end
+
+# c = Client.find(1)
+# c.jobs.create(:subject => "Test", :description => "This is a test")
+
+Session.destroy_all
+Appointment.destroy_all
+Client.destroy_all
+Movement.destroy_all
+
+s = Session.create(
+  note: "First session"
+)
+
+s.create_appointment(
+  date: DateTime.now.strftime("%m/%d/%Y"),
+  from: "1pm",
+  to: "2pm",
+  message: "First pilates class"
+)
+
+s.client.create(
+  [{
+    name: "Gyuchan",
+    email: "GyuchanEmail@gmail.com",
+    phone_number: "0212312312",
+    note: "Gyuchan's NOTE"
+  },
+  {
+    name: "Grace",
+    email: "GraceEmail@gmail.com",
+    phone_number: "0212312313",
+    note: "Grace's NOTE"
+  }]
+)
+
+s.movement.create(
+  [
+    {movement_name: "Splits1"},
+    {movement_name: "Splits2"},
+    {movement_name: "Splits3"}
+  ]
+)

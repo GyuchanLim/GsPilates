@@ -45,3 +45,5 @@ node_modules/*
 dist
 dist-ssr
 *.local
+public/.DS_Store
+.byebug_history
