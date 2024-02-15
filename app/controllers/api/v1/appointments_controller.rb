@@ -11,9 +11,8 @@ class Api::V1::AppointmentsController < ApplicationController
   # GET /appointments/1
   def show
     # sleep for 3 seconds
-    sleep 3
 
-    render json: @appointment
+    render json: { appointment: @appointment, session: @appointment.session }.to_json
   end
 
   # POST /appointments
