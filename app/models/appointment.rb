@@ -1,8 +1,7 @@
 class Appointment < ApplicationRecord
-  belongs_to :session
-  has_many :clients, :through => :sessions
+  has_one :session, dependent: :destroy
 
-  validates :date, :from, :to, presence: true
+  validates :session, :date, :from, :to, presence: true
   after_create :set_day
 
   def get_date

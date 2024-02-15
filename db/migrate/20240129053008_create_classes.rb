@@ -1,7 +1,6 @@
 class CreateClasses < ActiveRecord::Migration[7.1]
   def change
     create_table :appointments do |t|
-      t.belongs_to :session
       t.datetime :date
       t.string :day
       t.string :from
@@ -30,6 +29,7 @@ class CreateClasses < ActiveRecord::Migration[7.1]
     end
 
     create_table :sessions do |t|
+      t.belongs_to :appointment
       t.string :note
 
       t.timestamps

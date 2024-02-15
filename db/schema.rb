@@ -15,7 +15,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_053008) do
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.bigint "session_id"
     t.datetime "date"
     t.string "day"
     t.string "from"
@@ -23,7 +22,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_053008) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["session_id"], name: "index_appointments_on_session_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -54,9 +52,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_053008) do
   end
 
   create_table "sessions", force: :cascade do |t|
+    t.bigint "appointment_id"
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["appointment_id"], name: "index_sessions_on_appointment_id"
   end
 
 end

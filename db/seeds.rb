@@ -30,14 +30,16 @@ s = Session.create(
   note: "First session"
 )
 
-s.create_appointment(
-  date: DateTime.now.strftime("%m/%d/%Y"),
+a = Appointment.create(
+  # date: DateTime.now.strftime("%m/%d/%Y"),
+  date: DateTime.now,
   from: "1pm",
   to: "2pm",
-  message: "First pilates class"
+  message: "First pilates class",
+  session: s
 )
 
-s.client.create(
+a.session.client.create(
   [{
     name: "Gyuchan",
     email: "GyuchanEmail@gmail.com",
