@@ -5,6 +5,7 @@ import HomePage from "../HomePage";
 import PricesPage from "./PricesPage";
 import ContactsPage from "./ContactsPage";
 import AppointmentPage from "./class/AppointmentPage";
+import AppointmentDetail from "./class/AppointmentDetail";
 
 function AppRoutes() {
   return(
@@ -12,6 +13,7 @@ function AppRoutes() {
       <Route path="/" element={<HomePage />} />
       <Route path="/prices" element={<PricesPage />} />
       <Route path="/appointment" element={<AppointmentPage />} />
+      <Route path="/appointment/:id" element={<AppointmentDetail />} />
       <Route path="/contact" element={<ContactsPage />} />
     </Routes>
   )

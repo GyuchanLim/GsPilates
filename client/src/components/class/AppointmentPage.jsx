@@ -9,7 +9,7 @@ function AppointmentPage () {
   useEffect(() => {
     async function loadAppointments() {
       try {
-        const response = await fetch(APPOINTMENT_API_URL);
+        const response = await fetch(`${APPOINTMENT_API_URL}`);
         if (response.ok) {
           const json = await response.json();
           setAppointments(json);
