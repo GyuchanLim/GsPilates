@@ -8,7 +8,7 @@ function NavBar () {
       {" | "}
       <Link to="/prices">Prices</Link>
       {" | "}
-      <Link to="/schedule">Schedule</Link>
+      <Link to="/appointments">Appointment</Link>
       {" | "}
       <Link to="/contact">Contact</Link>
     </nav>
