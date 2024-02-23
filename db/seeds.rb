@@ -26,20 +26,7 @@ Appointment.destroy_all
 Client.destroy_all
 Movement.destroy_all
 
-s = Session.create(
-  note: "First session"
-)
-
-a = Appointment.create(
-  # date: DateTime.now.strftime("%m/%d/%Y"),
-  date: DateTime.now,
-  from: "1pm",
-  to: "2pm",
-  message: "First pilates class",
-  session: s
-)
-
-a.session.client.create(
+Client.create(
   [{
     name: "Gyuchan",
     email: "GyuchanEmail@gmail.com",
@@ -54,7 +41,21 @@ a.session.client.create(
   }]
 )
 
-s.movement.create(
+for i in 1..5 do
+  a = Appointment.create(
+    # date: DateTime.now.strftime("%m/%d/%Y"),
+    date: DateTime.yesterday,
+    from: "#{1+i}pm",
+    to: "#{2+i}pm",
+    message: "Appointment Message #{i}"
+  )
+  s = Session.create(
+    note: "Session Note #{i}",
+    appointment: a
+  )
+end
+
+Movement.create(
   [
     {movement_name: "Splits1"},
     {movement_name: "Splits2"},
