@@ -10,7 +10,7 @@ function NavBar () {
       {" | "}
       <Link to="/appointments">Appointment</Link>
       {" | "}
-      <Link to="/contact">Contact</Link>
+      <Link to="/contacts">Contact</Link>
     </nav>
   )
 }

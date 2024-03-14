@@ -31,12 +31,11 @@ class Api::V1::AppointmentsController < ApplicationController
 
   # PATCH/PUT /appointments/1
   def update
-    byebug
-    # if @appointment.update(appointment_params)
-    #   render json: @appointment
-    # else
-    #   render json: @appointment.errors, status: :unprocessable_entity
-    # end
+    if @appointment.update(appointment_params)
+      render json: @appointment
+    else
+      render json: @appointment.errors, status: :unprocessable_entity
+    end
   end
 
   # DELETE /appointments/1
@@ -52,6 +51,6 @@ class Api::V1::AppointmentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def appointment_params
-      params.require(:appointment).permit(:date, :from, :to, :message, :session, :hi)
+      params.require(:appointment).permit(:date, :from, :to, :message, :session)
     end
 end

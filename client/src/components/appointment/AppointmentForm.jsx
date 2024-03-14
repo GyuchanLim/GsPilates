@@ -39,7 +39,7 @@ function AppointmentForm ({ appointment, headerText, onSubmit, buttonText }) {
             type="date"
             id="start"
             name=""
-            value={formData.date}
+            value={formData.date.slice(0,10)}
             onChange={(e) => setFormData({
               ...formData,
               date: e.target.value,
@@ -84,17 +84,18 @@ function AppointmentForm ({ appointment, headerText, onSubmit, buttonText }) {
 AppointmentForm.propTypes = {
   appointment: PropTypes.shape({
     message: PropTypes.string.isRequired,
-    date: PropTypes.instanceOf(Date).isRequired,
+    date: PropTypes.string.isRequired,
     from: PropTypes.string.isRequired,
     to: PropTypes.string.isRequired,
   }),
-  headerText: PropTypes.string.isRequired,
+  headerText: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
   buttonText: PropTypes.string.isRequired,
 };
 
 AppointmentForm.defaultProps = {
   appointment: null,
+  headerText: "",
 };
 
 export default AppointmentForm;

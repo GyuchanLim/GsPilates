@@ -10,7 +10,6 @@ function AppointmentPage () {
   useEffect(() => {
     async function loadAppointments() {
       try {
-        console.log(APPOINTMENT_API_URL);
         const response = await fetch(`${APPOINTMENT_API_URL}`);
         if (response.ok) {
           const json = await response.json();
@@ -32,7 +31,7 @@ function AppointmentPage () {
     <>
       <div>
         {appointments.map((appointment) => (
-          <div key={appointment.id} className="post-container">
+          <div key={appointment.id} className="post-container show-border">
             <h2>{appointment.classes_id}</h2>
             <Link to={'/appointments/' + appointment.id}>{appointment.date.slice(0,10)} {appointment.day}, {appointment.from}-{appointment.to}</Link>
             <p>{appointment.message}</p>
