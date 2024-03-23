@@ -47,3 +47,7 @@ group :development do
   gem 'byebug'
 end
 
+
+group :development do
+  gem "js_from_routes"
+end

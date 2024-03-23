@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@js-from-routes/client": "^1.0.4",
     "react-router-dom": "^6.21.3",
     "vite": "^5.0.11"
   }
